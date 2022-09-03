@@ -1,5 +1,6 @@
 import { Header } from "./Header";
 import { Main } from "./Main";
+import { Stats } from "./Stats";
 
 export const Home = () => {
 
@@ -8,6 +9,7 @@ export const Home = () => {
     <>
         <Header/>
         <Main/>
+        <Stats/>
     </>
   )
 }
