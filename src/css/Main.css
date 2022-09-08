@@ -32,3 +32,56 @@ main {
 .illustration-container  {
     display: none;
 }
+
+@media (min-width: 842px){
+
+    main {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .welcome-content {
+        margin-right: 2em;
+    }
+
+
+    .illustration-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .illustration-container > img {
+        width: 70%;
+        
+    }
+}
+
+@media (min-width: 1060px) {
+
+
+    .welcome-content {
+        position: relative;
+        top: 2em;
+        align-self: flex-start;
+        flex: .4;
+    }
+
+    .illustration-container {
+        flex: .6;
+    }
+
+    .welcome-content__header {
+        font-size: 2.5rem;
+        margin-bottom: 1.2em;
+    }
+
+    .welcome-content__message {
+        margin-bottom: 3em;
+        line-height: 30px;
+    }
+
+}
