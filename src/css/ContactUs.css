@@ -77,3 +77,60 @@
 .socials-container > ul li span {
     margin-left: 1em;
 }
+
+@media (min-width: 710px){
+
+    .contact-us-content {
+        display: flex;
+        justify-content: space-around;
+    }
+
+
+    .contact-form-container {
+        flex: .5;
+    }
+
+    .contact-form {
+        width: 331px;
+    }
+
+    .socials-container {
+        flex: .5;
+    }
+}
+
+@media (min-width: 1060px){
+
+    .contact-us-header > h2 {
+        font-size: 40px;
+    }
+
+    .contact-us-header {
+        margin-bottom: 4em;
+        padding: 1em 1.8em;
+    }
+
+    .contact-form {
+        width: 400px;
+    }
+
+    .contact-us-content {
+        margin-left: 4em;
+    }
+
+    .socials-container {
+        border-left: 2px dashed #333;
+        margin-top: 0;
+    }
+
+    .socials-container > ul {
+        height: 100%;
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        justify-content: space-evenly;
+        left: 2em;
+        top: 1em;
+    }
+
+}
