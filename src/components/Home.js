@@ -4,6 +4,7 @@ import { Stats } from "./Stats";
 import { Locations } from "./Locations";
 import { AboutUs } from "./About-Us";
 import { ContactUs } from './ContactUs'
+import { Footer } from "./Footer";
 
 export const Home = () => {
 
@@ -16,6 +17,7 @@ export const Home = () => {
         <Locations/>
         <AboutUs/>
         <ContactUs/>
+        <Footer/>
     </>
   )
 }
