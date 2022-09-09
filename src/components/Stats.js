@@ -1,4 +1,4 @@
-import './css/Stats.css';
+import './../css/Stats.css';
 
 export const Stats = () => {
   return (
