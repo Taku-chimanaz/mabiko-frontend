@@ -32,6 +32,10 @@
     text-decoration: none;
 }
 
+.make-reservation:hover {
+    background-color: var(--secondary-color);
+}
+
 @media (min-width: 878px){
 
    .about {
