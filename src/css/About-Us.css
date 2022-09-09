@@ -1,0 +1,33 @@
+.about-us {
+    margin-top: 3em;
+    padding: 1.5rem;
+}
+
+.about-us-header > h2 {
+    text-transform: capitalize;
+    font-size: 2rem;
+}
+
+.about-us-img-container {
+    margin: 2.5em 0;
+}
+.about-us-img-container > img {
+    width: 100%;
+}
+
+.about-us-para{
+    font-size: .85rem;
+    line-height: 25px;
+}
+
+.make-reservation {
+    display: inline-block;
+    margin-top: 2em;
+    padding: 12px 0;
+    border-radius: 5px;
+    color: white;
+    background-color: var(--primary-color);
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+}
