@@ -40,10 +40,17 @@
 .available-countries > ul li {
     margin-bottom: 1em;
     font-size: 1rem;
+    display: flex;
+    align-items: center;
 }
 
 .search-for-branch {
     margin-top: 2em;
+}
+
+.available-countries > ul li .MuiSvgIcon-root{
+    color: #EA4335;
+    margin-right: .3em;
 }
 
 .search-container {
@@ -81,5 +88,16 @@
     margin-top: 2em;
     font-size: .9rem;
     text-align: center;
+}
+
+.search-results > ul {
+    list-style: none;
+}
+
+.search-results > ul li {
+    padding: 1.5em;
+    text-align: center;
+    background-color: whitesmoke;
+    border: 1px solid #fff;
 }
 
