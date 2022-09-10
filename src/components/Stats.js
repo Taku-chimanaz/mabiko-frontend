@@ -14,10 +14,7 @@ export const Stats = () => {
             branches += country.branches.length;
         })
     }
-    
 
-    console.log(branches)
-    
   return (
      
     <section className="stats">
