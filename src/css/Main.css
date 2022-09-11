@@ -1,5 +1,5 @@
 main {
-    padding: 1.5em 1em;
+    padding: 2em 1em;
 }
 
 .welcome-content__header,
@@ -28,7 +28,8 @@ main {
 }
 
 .reservations-btn-container > a:hover {
-    background-color: var(--secondary-color);
+    background-color: transparent;
+    border: 2px solid #fff;
 }
 
 
@@ -42,14 +43,28 @@ main {
     main {
         display: flex;
         justify-content: space-between;
+        background-color: var(--button-background);
+        height: 92vh;
+        padding: 2em 3em;
         align-items: center;
-        width: 90vw;
         margin-left: auto;
         margin-right: auto;
     }
 
+    .welcome-content__header,
+    .welcome-content__message{
+        color: #fff;
+    }
+
+
     .welcome-content {
+        position: relative;
+        left: -5em;
+        margin-top: 2em;
         margin-right: 2em;
+        margin-left: 2em;
+        padding: 0 3em;
+
     }
 
 
