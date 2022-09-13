@@ -12,7 +12,7 @@ export const Header = () => {
     <header>
 
         <div className="logo-container">
-            <img src="./mabiko.png" alt="mabiko logo" className="logo" width={"200px"}/>
+            <h3 className="logo">Mabiko</h3>
         </div>
 
         <nav>
