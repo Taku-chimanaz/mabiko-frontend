@@ -1,13 +1,10 @@
 import { useContext } from 'react';
 import './../css/Locations.css';
-import { HomeContext } from './Home';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { useState } from 'react';
 
-export const Locations = () => {
-
-  const countries = useContext(HomeContext);
-
+export const Locations = ({availableCountries}) => {
+  
 
   return (
     
@@ -22,9 +19,9 @@ export const Locations = () => {
 
             <ul>
             {
-               countries.length <= 0 ? <p>No countries available</p> :
+              availableCountries.length <= 0 ? <p>No countries available</p> :
 
-               countries.map(country => {
+               availableCountries.map(country => {
                  
                  return <li><LocationOnIcon/> {country.name}</li>
                })
@@ -32,7 +29,7 @@ export const Locations = () => {
             </ul>
         </div>
 
-        <SearchBranch countries={countries}/>
+        {<SearchBranch countries={availableCountries}/>}
 
         
     </section>

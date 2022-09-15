@@ -17,7 +17,7 @@ export const Main = () => {
                 </p>
 
                 <div className="reservations-btn-container">
-                    <a href="/" className="book-reservation">Book Reservation</a>
+                    <a href="/create-reservation" className="book-reservation">Book Reservation</a>
                     <a href="/" className="track-reservation">Track Reservation</a>
                 </div>
 

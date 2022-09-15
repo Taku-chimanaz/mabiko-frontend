@@ -1,0 +1,97 @@
+.create-reservation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-230deg, var(--primary-color), var(--button-background), var(--button-background));
+}
+
+.create-reservation > h2,
+.create-reservation > p {
+    text-align: center;
+    text-transform: capitalize;
+    color: #fff;
+    margin-top: 3em;
+}
+
+.create-reservation  > p {
+    font-weight: 600;
+    margin: 2em 0;
+    font-size: 1.2rem;
+}
+
+.progress-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+.timeline {
+    width: 40px;
+    background-color: var(--button-background);
+    height: 3px;
+}
+
+.circle1,
+.circle2,
+.circle3,
+.circle4 {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px  dashed var(--primary-color);
+    text-align: center;
+    font-size: .9rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.form-container {
+    background-color: #fff;
+    padding: 1.5em;
+}
+
+.customer-name-input,
+.customer-email-input,
+.location-selector-input {
+    padding: .5em;
+    border: 1px solid #333;
+    border-radius: 5px;
+    margin-bottom: 2em;
+}
+.customer-name-input > input,
+.customer-email-input > input,
+.location-selector-input > input {
+    width: 100%;
+    border: none;
+    outline-width: 0;
+}
+
+.save-reservation-details {
+    width: 100%;
+    padding: 13px 0;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.save-reservation-details:hover {
+    border: 2px solid var(--primary-color);
+    background-color: #fff;
+    color: #000;
+}
+
+@media (min-width: 400px){
+
+    .form-container {
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

@@ -5,59 +5,24 @@ import { Locations } from "./Locations";
 import { AboutUs } from "./About-Us";
 import { ContactUs } from './ContactUs'
 import { Footer } from "./Footer";
-import { backendUrl } from "../data";
-
-import React, { useContext, createContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Snackbar from '@mui/material/Snackbar';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
+import { getCountries } from "../js/getCountries";
+import './../App.css'
 
-
-export const HomeContext = createContext();
 
 export const Home = () => {
 
   const [availableCountries, setAvailableCountries] = useState([]);
-  const [message, setMessage] = useState("Fetching Countries")
   const [open, setOpen] = useState(false);
+  const [message, setMessage] = useState("Fetching countries");
 
-  useEffect(()=>{
-
-     // open snackbar to tell use that you are fetching data;
-
-     setOpen(true)
-
-     // function to fetch all countries
-
-    const getCountries = async () => {
-
-
-        try {
-
-          const countriesReq = await fetch(`${backendUrl}/api/country/get-all`);
-          const countries =  await countriesReq.json();
-
-          if(countries){
-            setAvailableCountries(countries.responseData);
-            setOpen(true);
-            setMessage("Countries fetched successfully")
-          }else {
-            setOpen(true)
-            setMessage(countries.message)
-          }
-
-        } catch (error) {
-          setOpen(true)
-          setMessage(error.message)
-        }
-    }
-
-    getCountries();
-
-     
-
+  useEffect(() => {
+    setOpen(true);
+    getCountries(setAvailableCountries, setMessage, setOpen);
   },[]);
-
 
   // creating action for the snackbar
 
@@ -85,8 +50,8 @@ export const Home = () => {
   
   return (
     
-    <HomeContext.Provider value={availableCountries}>
-       <Snackbar
+    <>
+      <Snackbar
         open={open}
         autoHideDuration={6000}
         onClose={handleClose}
@@ -97,12 +62,12 @@ export const Home = () => {
 
       <Header/>
       <Main/>   
-      <Stats/>
-      <Locations/>
+      <Stats availableCountries={availableCountries}/>
+      <Locations availableCountries={availableCountries}/>
       <AboutUs/>
       <ContactUs/>
       <Footer/>
-    </HomeContext.Provider>
-  )
+    </>
+  ) 
 }
 

@@ -1,20 +1,16 @@
 import './../css/Stats.css';
-import { HomeContext } from './Home';
-import { useContext } from 'react';
 
-export const Stats = () => {
+export const Stats = ({availableCountries}) => {
 
-    
-    const countries = useContext(HomeContext)
-    
+
     let branches = 0
 
-    if(countries.length > 0){
-        countries.forEach(country => {
+    if(availableCountries.length > 0){
+        availableCountries.forEach(country => {
             branches += country.branches.length;
         })
     }
-
+ 
   return (
      
     <section className="stats">
