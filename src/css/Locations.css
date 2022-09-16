@@ -61,27 +61,13 @@
 .search-input {
     padding: .5em;
     border: 2px solid #f0f0f0;
-    border-radius: 5px
+    border-radius: 5px;
 }
 
 .search-input > input {
     width: 100%;
     border: none;
     outline-width: 0;
-}
-
-.search-btn {
-    margin-left: 2em;
-    padding: 5px 10px;
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.search-btn:hover {
-    background-color: var(--secondary-color);
 }
 
 .search-results {
@@ -99,5 +85,12 @@
     text-align: center;
     background-color: whitesmoke;
     border: 1px solid #fff;
+}
+
+@media (min-width: 1060px){
+
+    .search-input {
+        width: 25%;
+    }
 }
 
