@@ -71,7 +71,6 @@ const SearchBranch = ({countries}) => {
           ></input>
         </div>
     
-        <button className="search-btn">Search</button>
 
       </div>
 
