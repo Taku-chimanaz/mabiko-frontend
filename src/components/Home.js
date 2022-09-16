@@ -57,7 +57,7 @@ export const Home = () => {
         onClose={handleClose}
         message={message}
         action={action}
-        sx={{backgroundColor: "#ED4962"}}
+        sx={{color: "#ED4962"}}
       />
 
       <Header/>
