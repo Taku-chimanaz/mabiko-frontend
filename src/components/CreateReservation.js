@@ -1,10 +1,9 @@
 import './../css/CreateReservations.css';
-import { useContext } from 'react';
-//import {HomeContext} from './Home';
+import { useState } from 'react';
+import searchBranch, { searchCountry } from './../js/searchBranch';
 
 export const CreateReservation = () => {
-  /* const home = useContext(HomeContext);
-  console.log(home) */
+ 
   return (
      <section className="create-reservation">
 
@@ -37,6 +36,11 @@ export const ProgressLine  = () => {
 
 const FirstStepForm = () => {
 
+  const [showAutoComplete, setShowAutoComplete] = useState(false)
+  const [searchedText, setSearchText] = useState("");
+  const [searchedItems, setSearchedItems] = useState([])
+  const countries = JSON.parse(localStorage.getItem("countries"));
+
   return(
     
     <form action="" className="create-reservation-form">
@@ -50,13 +54,16 @@ const FirstStepForm = () => {
       </div>
 
       <div className="location-selector-input">
-      <input 
-        type="text" 
-        placeholder='Enter country to select branch'
-      />
+        <input 
+          type="text" 
+          placeholder='Enter country to select branch'
+          value={searchedText}
+          onFocus={e => setShowAutoComplete(!showAutoComplete)}
+          onChange={ e => searchCountry(e, countries, setSearchedItems, setSearchText, searchedText)}
+        />
       </div>
 
-      <AutoComplete/>
+      {showAutoComplete && <AutoComplete searchedItems={searchedItems} setSearchText={setSearchText} setShowAutoComplete={setShowAutoComplete}/>}
 
       <button className="save-reservation-details">
         Next
@@ -65,12 +72,29 @@ const FirstStepForm = () => {
   )
 }
 
-const AutoComplete = () => {
+const AutoComplete = ({searchedItems, setSearchText, setShowAutoComplete}) => {
+
+  const addBranchToInput = (e) => {
+
+    const branch = e.target.innerHTML;
+
+    setSearchText(branch)
+    setShowAutoComplete(false)
+    
+  }
 
   return (
     <div className="auto-complete-section">
       <ul>
+        {
+          searchedItems.length <= 0 ? <li>No branches available</li>:
 
+          searchedItems.map(branch => {
+            return(
+              <li key={branch._id} onClick={e => addBranchToInput(e)}>{branch}</li>
+            )
+          })
+        }
       </ul>
     </div>
   )
