@@ -52,6 +52,13 @@
 
 }
 
+.circle1-bold,
+.circle2-bold,
+.circle3-bold,
+.circle4-bold {
+    border: 2px solid var(--primary-color)
+}
+
 .form-container {
     background-color: #fff;
     padding: 1.5em;
