@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import './../css/Locations.css';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { useState } from 'react';
+import { searchCountry } from '../js/searchBranch';
 
 export const Locations = ({availableCountries}) => {
   
@@ -41,19 +42,6 @@ const SearchBranch = ({countries}) => {
   const [searchedText, setSearchText] = useState("");
   const [searchedItems, setSearchedItems] = useState([])
 
-
-  const searchCountry = (e) => {
-      setSearchText(e.target.value);
-
-      countries.forEach(country => {
-
-        if(country.name.startsWith(searchedText) && searchedText.length !== 0){
-           setSearchedItems([...country.branches]);
-           console.log(searchedItems)
-        }
-
-      })
-  }
   
 
   return(
@@ -67,7 +55,7 @@ const SearchBranch = ({countries}) => {
             type="text" 
             placeholder="Enter country to search"
             value={searchedText}
-            onChange={e => searchCountry(e)}
+            onChange={e => searchCountry(e, countries, setSearchedItems, setSearchText, searchedText)}
           ></input>
         </div>
     
