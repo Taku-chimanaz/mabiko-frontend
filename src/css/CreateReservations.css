@@ -5,6 +5,7 @@
     width: 100%;
     height: 100%;
     background: linear-gradient(-230deg, var(--primary-color), var(--button-background), var(--button-background));
+    
 }
 
 .create-reservation > h2,
@@ -64,6 +65,12 @@
     border-radius: 5px;
     margin-bottom: 2em;
 }
+
+.location-selector-input {
+    margin-bottom: 0;
+}
+
+
 .customer-name-input > input,
 .customer-email-input > input,
 .location-selector-input > input {
@@ -72,6 +79,30 @@
     outline-width: 0;
 }
 
+.auto-complete-section {
+    box-shadow: 2px 2px 3px  #333;
+    background-color: #FAF9F6;
+    border-radius: 5px;
+    height: 100px;
+    overflow-y: scroll;
+}
+
+.auto-complete-section ul {
+    list-style: none;
+}
+
+.auto-complete-section ul li {
+    padding: .5em;
+    font-size: .8rem;
+}
+
+.auto-complete-section ul li:hover {
+    color: #fff;
+    background-color: var(--primary-color);
+}
+
+
+
 .save-reservation-details {
     width: 100%;
     padding: 13px 0;
@@ -79,6 +110,7 @@
     color: #fff;
     border: none;
     border-radius: 5px;
+    margin-top: 2em;
 }
 
 .save-reservation-details:hover {
@@ -93,5 +125,16 @@
         width: 400px;
         margin-left: auto;
         margin-right: auto;
+    }
+}
+
+@media (min-width: 1100px) {
+
+    .create-reservation {
+        overflow-y: hidden;
+    }
+    .create-reservation > h2,
+    .create-reservation > p{
+        margin-top: 2em;
     }
 }
