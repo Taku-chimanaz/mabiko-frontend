@@ -16,6 +16,7 @@ root.render(
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/create-reservation" element={<CreateReservation/>}/>
+        <Route path="/second-step" element={<CreateReservation/>}/>
       </Routes>
     </BrowserRouter>
 

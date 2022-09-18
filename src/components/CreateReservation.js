@@ -1,6 +1,7 @@
 import './../css/CreateReservations.css';
 import { useState } from 'react';
-import searchBranch, { searchCountry } from './../js/searchBranch';
+import { searchCountry } from './../js/searchBranch';
+import { useNavigate } from 'react-router-dom';
 
 export const CreateReservation = () => {
  
@@ -36,21 +37,47 @@ export const ProgressLine  = () => {
 
 const FirstStepForm = () => {
 
-  const [showAutoComplete, setShowAutoComplete] = useState(false)
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("")
   const [searchedText, setSearchText] = useState("");
-  const [searchedItems, setSearchedItems] = useState([])
+  const [customerName, setCustomerName] = useState("");
+  const [searchedItems, setSearchedItems] = useState([]);
+  const [showAutoComplete, setShowAutoComplete] = useState(false);
   const countries = JSON.parse(localStorage.getItem("countries"));
+
+  const saveDetails = () => {
+
+    const details = {
+      customerName,
+      email,
+      branch: searchedText
+    }
+
+    localStorage.setItem("details", JSON.stringify(details));
+    navigate('/second-step');
+
+  }
 
   return(
     
     <form action="" className="create-reservation-form">
              
       <div className="customer-name-input">
-      <input type="text" placeholder='Enter your name'/>
+        <input 
+          type="text" 
+          placeholder='Enter your name'
+          value={customerName}
+          onChange={e => setCustomerName(e.target.value)}
+        />
       </div>
 
       <div className="customer-email-input">
-      <input type="email" placeholder='Enter your email'/>
+        <input 
+          type="email" 
+          placeholder='Enter your email'
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+        />
       </div>
 
       <div className="location-selector-input">
@@ -63,9 +90,17 @@ const FirstStepForm = () => {
         />
       </div>
 
-      {showAutoComplete && <AutoComplete searchedItems={searchedItems} setSearchText={setSearchText} setShowAutoComplete={setShowAutoComplete}/>}
+      {
+        showAutoComplete &&
 
-      <button className="save-reservation-details">
+         <AutoComplete 
+          searchedItems={searchedItems} 
+          setSearchText={setSearchText} 
+          setShowAutoComplete={setShowAutoComplete}
+         />
+      }
+
+      <button onClick={saveDetails} className="save-reservation-details">
         Next
       </button>
     </form>
@@ -80,7 +115,7 @@ const AutoComplete = ({searchedItems, setSearchText, setShowAutoComplete}) => {
 
     setSearchText(branch)
     setShowAutoComplete(false)
-    
+
   }
 
   return (
