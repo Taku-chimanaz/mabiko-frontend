@@ -12,7 +12,7 @@ export const CreateReservation = () => {
         <p>first step</p>
 
         <article className="form-container">
-          <ProgressLine/>
+          <ProgressLine finished={""}/>
           <FirstStepForm/>
         </article>
 
@@ -20,17 +20,19 @@ export const CreateReservation = () => {
   )
 }
 
-export const ProgressLine  = () => {
+export const ProgressLine  = ({finished}) => {
+
+  const boldClasses = finished.split(" ");
 
   return(
     <div className="progress-section">
-      <div className="circle1">1</div>
+      <div className={`circle1 ${boldClasses[0]}`}>1</div>
       <div className="timeline"></div>
-      <div className="circle2">2</div>
+      <div className={`circle2 ${boldClasses[1]}`}>2</div>
       <div className="timeline"></div>
-      <div className="circle3">3</div>
+      <div className={`circle3 ${boldClasses[2]}`}>3</div>
       <div className="timeline"></div>
-      <div className="circle4">4</div>
+      <div className={`circle4 ${boldClasses[3]}`}>4</div>
     </div>
   )
 }
@@ -45,7 +47,9 @@ const FirstStepForm = () => {
   const [showAutoComplete, setShowAutoComplete] = useState(false);
   const countries = JSON.parse(localStorage.getItem("countries"));
 
-  const saveDetails = () => {
+  const saveDetails = (e) => {
+
+    e.preventDefault();
 
     const details = {
       customerName,
@@ -100,7 +104,7 @@ const FirstStepForm = () => {
          />
       }
 
-      <button onClick={saveDetails} className="save-reservation-details">
+      <button onClick={e => saveDetails(e)} className="save-reservation-details">
         Next
       </button>
     </form>
