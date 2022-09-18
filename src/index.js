@@ -5,6 +5,8 @@ import './index.css';
 
 import { Home } from './components/Home';
 import { CreateReservation } from './components/CreateReservation';
+import { SecondStep } from './components/SecondStep';
+import { ThirdStep } from './components/ThirdStep';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -16,7 +18,8 @@ root.render(
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/create-reservation" element={<CreateReservation/>}/>
-        <Route path="/second-step" element={<CreateReservation/>}/>
+        <Route path="/second-step" element={<SecondStep/>}/>
+        <Route path="/third-step" element={<ThirdStep/>}/>
       </Routes>
     </BrowserRouter>
 
