@@ -35,14 +35,14 @@
     margin-bottom: 2em;
 }
 
-.location-selector-input {
-    margin-bottom: 0;
-}
-
 
 .time-input > input,
 .attendees-input > input {
     width: 100%;
     border: none;
     outline-width: 0;
+}
+
+.time-input {
+    margin-top: 2em;
 }
