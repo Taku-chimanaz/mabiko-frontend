@@ -43,7 +43,7 @@ const ThirdStepForm = () => {
         if(changedCustomerName !== details.customerName) details.customerName = changedCustomerName;
 
         localStorage.setItem("details", JSON.stringify(details));
-        navigate('/final-step');
+        navigate('/last-step');
         
     }
 
