@@ -78,8 +78,12 @@ export const verifyReservationCode = (e, code, navigate, setMessage, setOpen) =>
     .then(result => {
 
       if(result.message === "request successful"){
-        navigate('/reservation-details')
+        
+        localStorage.setItem("reservation", JSON.stringify(result.responseData))
+        navigate('/reservation-voucher-review');
+
       }else {
+
         handleResponses(
           action,
           setMessage,
@@ -89,7 +93,9 @@ export const verifyReservationCode = (e, code, navigate, setMessage, setOpen) =>
           null,
           true
         )
+
       }
+      
     })
     .catch(() => {
       handleResponses(
@@ -106,7 +112,7 @@ export const verifyReservationCode = (e, code, navigate, setMessage, setOpen) =>
 
 }
 
-const handleResponses = (action, setMessage, setResendEmail, setOpen, message, resendEmail, open)=>{
+export const handleResponses = (action, setMessage, setResendEmail, setOpen, message, resendEmail, open)=>{
 
    switch(action){
 
