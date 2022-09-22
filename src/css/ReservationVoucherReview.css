@@ -1,0 +1,76 @@
+.reservation-voucher-review {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(-230deg, var(--primary-color), var(--button-background), var(--button-background));
+}
+
+.reservation-content {
+    padding: 1.5em;
+    background-color: #fff;
+}
+
+.reservation-content-header {
+    font-size: 1rem;
+    margin-bottom: 1em;
+}
+
+.voucher-label {
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 1em;
+}
+
+.voucher-code-container {
+    padding: .5em;
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 5px;
+    margin-bottom: 1em;
+}
+
+.voucher-code-container > input {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    outline-width: 0;
+}
+
+.reservation-content-para {
+    font-size: .9rem;
+    line-height: 25px;
+    margin-bottom: 1em;
+}
+
+.email-code {
+    padding: 13px 0;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--button-background);
+    color: #fff;
+    max-height: 41px;
+}
+
+.email-code:hover {
+    background-color: transparent;
+    border: 2px solid var(--button-background);
+    color: #000;
+    cursor: pointer;
+}
+
+.home-link {
+    display: inline-block;
+    margin-top: 1em;
+    text-decoration: none;
+}
+
+@media (min-width: 600px){
+
+    .reservation-content {
+        width: 400px
+    }
+}
